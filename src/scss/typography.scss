@@ -1,0 +1,20 @@
+@mixin font-primary() {
+  font-family: 'Lora', serif;
+}
+
+@mixin font-primary-weight($weight) {
+  @if $weight == 'regular' {
+    font-weight: 400;
+  }
+  @else if $weight == 'semibold' {
+    font-weight: 600;
+  }
+  @else if $weight == 'bold' {
+    font-weight: 700;
+  }
+}
+
+@mixin font-accent() {
+  font-family: 'Fredoka One', cursive;
+  font-weight: 400;
+}
