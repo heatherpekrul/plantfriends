@@ -1,0 +1,32 @@
+.header {
+  background: $color-jade;
+  color: $color-white;
+  overflow: auto;
+
+  a {
+    text-decoration: none;
+    color: $color-white;
+  }
+
+  &__nav {
+    @include responsive-container();
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        flex: 0 1 auto;
+      }
+    }
+  }
+
+  &__logo {
+    @include font-accent();
+    font-size: 2rem;
+  }
+}

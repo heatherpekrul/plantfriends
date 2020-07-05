@@ -1,0 +1,17 @@
+.meat {
+  &__container {
+    @include responsive-container();
+  }
+}
+
+.plantList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  article {
+    flex: 0 0 calc(33% - 1rem);
+    margin-bottom: 2rem;
+    @include card();
+  }
+}

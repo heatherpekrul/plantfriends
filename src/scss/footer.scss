@@ -1,0 +1,43 @@
+.footer {
+  background: $color-kingfisher;
+  color: $color-white;
+  @include font-primary-size(small);
+  overflow: auto;
+
+  a {
+    color: $color-white;
+    text-decoration: underline;
+    transition: color 0.2s;
+
+    &:hover,
+    &:focus {
+      color: $color-raspberry;
+    }
+  }
+
+  &__container {
+    @include responsive-container();
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__copyright {
+    flex: 0 1 auto;
+    align-self: flex-start;
+  }
+
+  &__nav {
+    
+    ul {
+      display: flex;
+      margin: 0;
+      list-style: none;
+
+      li {
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

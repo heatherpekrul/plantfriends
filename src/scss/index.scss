@@ -1,4 +1,11 @@
+// SETTINGS AND UTILITIES
 @import 'color';
+@import 'helpers';
 @import 'typography';
 
+// STYLES
+@import '~normalize.css/normalize.css';
 @import 'base';
+@import 'app';
+@import 'footer';
+@import 'header';

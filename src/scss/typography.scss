@@ -14,6 +14,21 @@
   }
 }
 
+@mixin font-primary-size($size) {
+  @if $size == 'tiny' {
+    font-size: 0.5rem;
+  }
+  @else if $size == 'small' {
+    font-size: 0.75rem;
+  }
+  @else if $size == 'regular' {
+    font-size: 1rem;
+  }
+  @else if $size == 'large' {
+    font-size: 1.25rem;
+  }
+}
+
 @mixin font-accent() {
   font-family: 'Fredoka One', cursive;
   font-weight: 400;
