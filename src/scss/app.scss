@@ -13,5 +13,9 @@
     flex: 0 0 calc(33% - 1rem);
     margin-bottom: 2rem;
     @include card();
+
+    a {
+      display: block;
+    }
   }
 }

@@ -40,5 +40,29 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCP3P5NUWwutQNG4RKvGLrbDa71vkKVGuk",
+        authDomain: "plantfriends-f82df.firebaseapp.com",
+        databaseURL: "https://plantfriends-f82df.firebaseio.com",
+        projectId: "plantfriends-f82df",
+        storageBucket: "plantfriends-f82df.appspot.com",
+        messagingSenderId: "586245474052",
+        appId: "1:586245474052:web:5122551261887222e3b251",
+        measurementId: "G-D5HZJ87GES"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>

@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Link
+} from "react-router-dom";
 
 const Header = () => {
   return (
@@ -6,19 +10,24 @@ const Header = () => {
       <nav className="header__nav" aria-label="Header Navigation">
         <ul>
           <li>
-            <a href="#" className="header__logo">Plannter</a>
+            <Link to="/" className="header__logo">
+              Plannter
+            </Link>
           </li>
           <li>
-            <a href="#">Plants</a>
+            <Link to="/plants">
+              Plants
+            </Link>
           </li>
           <li>
-            <a href="#">Account</a>
+            <Link to="/feed">
+              Feed
+            </Link>
           </li>
           <li>
-            <a href="#">Connections</a>
-          </li>
-          <li>
-            <a href="#">Light/Dark Mode</a>
+            <Link to="/account">
+              Account
+            </Link>
           </li>
         </ul>
       </nav>
