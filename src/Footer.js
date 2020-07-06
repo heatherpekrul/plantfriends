@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -11,16 +12,24 @@ const Footer = () => {
         <nav className="footer__nav" aria-label="Footer Navigation">
           <ul>
             <li>
-              <a href="#">About</a>
+              <Link to="/about">
+                About
+              </Link>
             </li>
             <li>
-              <a href="#">Privacy Statement</a>
+              <Link to="/privacy">
+                Privacy Statement
+              </Link>
             </li>
             <li>
-              <a href="#">Accessibility</a>
+              <Link to="/accessbility">
+                Accessibility
+              </Link>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <Link to="/contact">
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>

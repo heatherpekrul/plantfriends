@@ -11,6 +11,15 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import "firebase/auth";
+import * as Firebase from "firebase/app";
+import {
+  FirebaseAuthProvider,
+  FirebaseAuthConsumer,
+  IfFirebaseAuthed,
+  IfFirebaseAuthedAnd
+} from "@react-firebase/auth";
+import FirebaseConfig from './firebaseConfig';
 
 const plantFam = [
   {
@@ -51,30 +60,61 @@ function PlantList(props) {
 
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <main className="meat">
-          <div className="meat__container">
-            <Switch>
-              <Route path="/plants">
-                <Plants />
-              </Route>
-              <Route path="/feed">
-                <Feed />
-              </Route>
-              <Route path="/account">
-                <Account />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <FirebaseAuthProvider firebase={Firebase} {...FirebaseConfig}>
+      <Router>
+        <div className="app">
+          <Header />
+          <main className="meat">
+            <div className="meat__container">
+              <FirebaseAuthConsumer>
+                {({ isSignedIn, user, providerId }) => {
+                  return (
+                    <pre>
+                      {JSON.stringify({ isSignedIn, user, providerId }, null, 2)}
+                    </pre>
+                  );
+                }}
+              </FirebaseAuthConsumer>
+              <button
+                onClick={() => {
+                  const googleAuthProvider = new Firebase.auth.GoogleAuthProvider();
+                  Firebase.auth().signInWithPopup(googleAuthProvider);
+                }}
+              >
+                Sign In with Google
+              </button>
+              <Switch>
+                <Route path="/plants">
+                  <Plants />
+                </Route>
+                <Route path="/feed">
+                  <Feed />
+                </Route>
+                <Route path="/account">
+                  <Account />
+                </Route>
+                <Route path="/about">
+                  <About />
+                </Route>
+                <Route path="/privacy">
+                  <Privacy />
+                </Route>
+                <Route path="/accessibility">
+                  <Accessibility />
+                </Route>
+                <Route path="/contact">
+                  <Contact />
+                </Route>
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            </div>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </FirebaseAuthProvider>
   );
 }
 
@@ -112,6 +152,38 @@ function Account() {
   return (
     <div>
       <h1>Account</h1>
+    </div>
+  );
+}
+
+function About() {
+  return (
+    <div>
+      <h1>About</h1>
+    </div>
+  );
+}
+
+function Privacy() {
+  return (
+    <div>
+      <h1>Privacy Statement</h1>
+    </div>
+  );
+}
+
+function Accessibility() {
+  return (
+    <div>
+      <h1>Accessibility</h1>
+    </div>
+  );
+}
+
+function Contact() {
+  return (
+    <div>
+      <h1>Contact</h1>
     </div>
   );
 }
