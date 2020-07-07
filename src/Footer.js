@@ -22,7 +22,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/accessbility">
+              <Link to="/accessibility">
                 Accessibility
               </Link>
             </li>
